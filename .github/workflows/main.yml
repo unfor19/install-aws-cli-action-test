@@ -1,0 +1,65 @@
+on: [push]
+
+jobs:
+
+  test_empty_input:
+    runs-on: ubuntu-latest
+    name: Test installation of the latest version
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+    - run: echo ${{ steps.install-aws-cli.outputs.version }} 
+      shell: bash
+
+
+  test_latest_version_v1:
+    runs-on: ubuntu-latest
+    name: Test installation of the latest version
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: "1"
+    - run: echo ${{ steps.install-aws-cli.outputs.version }} 
+      shell: bash
+
+
+  test_latest_version_v2:
+    runs-on: ubuntu-latest
+    name: Test installation of the latest version
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: "2"
+    - run: echo ${{ steps.install-aws-cli.outputs.version }} 
+      shell: bash      
+
+
+  test_specific_v1:
+    runs-on: ubuntu-latest
+    name: Test installation of v1
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: "1.18.1"
+    - run: echo ${{ steps.install-aws-cli.outputs.version }} 
+      shell: bash
+
+
+  test_specific_v2:
+    runs-on: ubuntu-latest
+    name: Test installation of v2
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: "2.0.30"
+    - run: echo ${{ steps.install-aws-cli.outputs.version }} 
+      shell: bash
