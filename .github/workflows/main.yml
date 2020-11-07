@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@master
-    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+    - run: aws --version
       shell: bash
 
 
@@ -22,7 +22,7 @@ jobs:
       uses: unfor19/install-aws-cli-action@master
       with:
         version: 1
-    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+    - run: aws --version
       shell: bash
 
 
@@ -35,8 +35,8 @@ jobs:
       uses: unfor19/install-aws-cli-action@master
       with:
         version: 2
-    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
-      shell: bash      
+    - run: aws --version
+      shell: bash
 
 
   test_specific_v1:
@@ -48,7 +48,7 @@ jobs:
       uses: unfor19/install-aws-cli-action@master
       with:
         version: 1.18.1
-    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+    - run: aws --version
       shell: bash
 
 
@@ -61,5 +61,5 @@ jobs:
       uses: unfor19/install-aws-cli-action@master
       with:
         version: 2.0.30
-    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+    - run: aws --version
       shell: bash
