@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
 
-  test_empty_input:
+  test_no_input:
     runs-on: ubuntu-latest
     name: Test installation of the latest version
     steps:
@@ -21,7 +21,7 @@ jobs:
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@master
       with:
-        version: "1"
+        version: 1
     - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
       shell: bash
 
@@ -34,7 +34,7 @@ jobs:
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@master
       with:
-        version: "2"
+        version: 2
     - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
       shell: bash      
 
@@ -47,7 +47,7 @@ jobs:
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@master
       with:
-        version: "1.18.1"
+        version: 1.18.1
     - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
       shell: bash
 
@@ -60,6 +60,6 @@ jobs:
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@master
       with:
-        version: "2.0.30"
+        version: 2.0.30
     - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
       shell: bash
