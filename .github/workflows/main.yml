@@ -13,17 +13,17 @@ jobs:
       shell: bash
 
 
-  # test_latest_version_v1:
-  #   runs-on: ubuntu-latest
-  #   name: latest v1
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - id: install-aws-cli
-  #     uses: unfor19/install-aws-cli-action@master
-  #     with:
-  #       version: 1
-  #   - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
-  #     shell: bash
+  test_latest_version_v1:
+    runs-on: ubuntu-latest
+    name: latest v1
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: 1
+    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+      shell: bash
 
 
   test_latest_version_v2:
@@ -39,27 +39,27 @@ jobs:
       shell: bash      
 
 
-  # test_specific_v1:
-  #   runs-on: ubuntu-latest
-  #   name: specific v1
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - id: install-aws-cli
-  #     uses: unfor19/install-aws-cli-action@master
-  #     with:
-  #       version: 1.18.1
-  #   - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
-  #     shell: bash
+  test_specific_v1:
+    runs-on: ubuntu-latest
+    name: specific v1
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: 1.18.1
+    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+      shell: bash
 
 
-  # test_specific_v2:
-  #   runs-on: ubuntu-latest
-  #   name: specific v2
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - id: install-aws-cli
-  #     uses: unfor19/install-aws-cli-action@master
-  #     with:
-  #       version: 2.0.30
-  #   - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
-  #     shell: bash
+  test_specific_v2:
+    runs-on: ubuntu-latest
+    name: specific v2
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: unfor19/install-aws-cli-action@master
+      with:
+        version: 2.0.30
+    - run: echo AWS_CLI_VERSION = ${{ steps.install-aws-cli.outputs.version }}
+      shell: bash
