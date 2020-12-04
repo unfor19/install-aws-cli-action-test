@@ -2,9 +2,9 @@ name: test-action
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
-
   test_no_input:
     runs-on: ubuntu-latest
     name: no input
