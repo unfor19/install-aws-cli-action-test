@@ -3,6 +3,11 @@ name: test-action
 on:
   push:
   workflow_dispatch:
+    inputs:
+      src_ref:
+        description: Which branch to test?
+        required: true
+        default: master
 
 jobs:
   test_no_input:
