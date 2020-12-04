@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@${{ github.event.inputs.src_ref }}
+      uses: unfor19/install-aws-cli-action@master
     - run: aws --version
       shell: bash
 
