@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
     - run: aws --version
       shell: bash
 
@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
       with:
         version: 1
     - run: aws --version
@@ -40,7 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
       with:
         version: 2
     - run: aws --version
@@ -53,7 +53,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
       with:
         version: 1.18.1
     - run: aws --version
@@ -66,7 +66,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
       with:
         version: 2.0.30
     - run: aws --version
