@@ -7,7 +7,7 @@ on:
       src_ref:
         description: Which branch to test?
         required: true
-        default: master
+        default: feature/multiple-os
 
 jobs:
   test_no_input:
@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: unfor19/install-aws-cli-action@feature/multiple-os
     - run: aws --version
       shell: bash
 
@@ -33,7 +33,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: unfor19/install-aws-cli-action@feature/multiple-os
       with:
         version: 1
     - run: aws --version
@@ -49,7 +49,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: unfor19/install-aws-cli-action@feature/multiple-os
       with:
         version: 2
     - run: aws --version
@@ -65,7 +65,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: unfor19/install-aws-cli-action@feature/multiple-os
       with:
         version: 1.18.1
     - run: aws --version
@@ -81,7 +81,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: install-aws-cli
-      uses: unfor19/install-aws-cli-action@master
+      uses: unfor19/install-aws-cli-action@feature/multiple-os
       with:
         version: 2.0.30
     - run: aws --version
