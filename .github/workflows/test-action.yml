@@ -11,7 +11,10 @@ on:
 
 jobs:
   test_no_input:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     name: no input
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +25,10 @@ jobs:
 
 
   test_latest_version_v1:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     name: latest v1
     steps:
     - uses: actions/checkout@v2
@@ -35,7 +41,10 @@ jobs:
 
 
   test_latest_version_v2:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     name: latest v2
     steps:
     - uses: actions/checkout@v2
@@ -48,7 +57,10 @@ jobs:
 
 
   test_specific_v1:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     name: specific v1
     steps:
     - uses: actions/checkout@v2
@@ -61,7 +73,10 @@ jobs:
 
 
   test_specific_v2:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     name: specific v2
     steps:
     - uses: actions/checkout@v2
