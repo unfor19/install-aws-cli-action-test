@@ -71,3 +71,31 @@ jobs:
         version: 2.0.30
     - run: aws --version
       shell: bash
+
+
+  test_lightsailctl_v1:
+    runs-on: ubuntu-latest
+    name: lightstailctl aws-cli-v1
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
+      with:
+        version: 2.0.30
+        lightsailctl: true
+    - run: aws --version
+      shell: bash
+
+
+  test_lightsailctl_v2:
+    runs-on: ubuntu-latest
+    name: lightstailctl aws-cli-v2
+    steps:
+    - uses: actions/checkout@v2
+    - id: install-aws-cli
+      uses: chooban/install-aws-cli-action@d588bdde3d026638791d3ce99c0d5b63d3a08e9b
+      with:
+        version: 1.18.1
+        lightsailctl: true
+    - run: aws --version
+      shell: bash
