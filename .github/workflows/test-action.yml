@@ -52,6 +52,7 @@ jobs:
       uses: unfor19/install-aws-cli-action@feature/multiple-os
       with:
         version: 2
+        verbose: true
     - run: aws --version
       shell: bash
 
