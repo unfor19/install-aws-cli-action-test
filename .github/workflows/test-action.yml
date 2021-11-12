@@ -24,7 +24,7 @@ jobs:
           - TEST_NAME: "Specific v1"
             AWS_CLI_VERSION: "1.18.1"
           - TEST_NAME: "No Input"
-    name: Test ${{ matrix.TEST_NAME }}
+    name: Test ${{ matrix.TEST_NAME }} ${{ matrix.AWS_CLI_VERSION }}
     steps:
       - name: Test ${{ matrix.TEST_NAME }}
         id: install-aws-cli
