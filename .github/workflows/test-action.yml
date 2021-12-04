@@ -4,10 +4,15 @@ on:
   push:
   workflow_dispatch:
     inputs:
-      src_ref:
-        description: Which branch to test?
+      src_repository:
+        description: Source Repository - {owner}/{repo_name}
         required: true
-        default: master
+      src_workflow_name:
+        description: Source Workflow Name
+        required: true
+      src_sha:
+        description: Source Repository SHA - GITHUB_SHA
+        required: true
 
 jobs:
   test:
@@ -33,3 +38,24 @@ jobs:
           version: ${{ matrix.AWS_CLI_VERSION }}
       - run: aws --version
         shell: bash
+    outputs:
+      target_job_status: ${{ job.status }}
+
+  update-status-check:
+    name: Update Status Check In Source Repository
+    runs-on: ubuntu-20.04
+    needs:
+      - test # Change if necessary
+    if: ${{ always() }}
+    steps:
+      - name: Status Update Action Repo
+        uses: unfor19/hero-action@v1
+        with:
+          action: "status-update"
+          gh_token: ${{ secrets.GH_TOKEN }} # scope: repo + workflow
+          src_repository: ${{ github.event.inputs.src_repository }}
+          src_workflow_name: ${{ github.event.inputs.src_workflow_name }}
+          src_sha: ${{ github.event.inputs.src_sha }}
+          target_repository: ${{ github.repository }}
+          target_job_status: ${{ needs.test.outputs.target_job_status }}
+          target_run_id: ${{ github.run_id }}
