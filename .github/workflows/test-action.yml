@@ -29,6 +29,18 @@ jobs:
           - TEST_NAME: "Specific v1"
             AWS_CLI_VERSION: "1.18.1"
           - TEST_NAME: "No Input"
+          - TEST_NAME: "WORKDIR v1"
+            WORKDIR: "/tmp/unfor19-awscli"
+            AWS_CLI_VERSION: "1"
+          - TEST_NAME: "WORKDIR v2"
+            WORKDIR: "/tmp/unfor19-awscli"
+            AWS_CLI_VERSION: "2"
+          - TEST_NAME: "ROOTDIR v1"
+            ROOTDIR: "/tmp"
+            AWS_CLI_VERSION: "1"
+          - TEST_NAME: "ROOTDIR v2"
+            ROOTDIR: "/tmp"
+            AWS_CLI_VERSION: "2"            
     name: Test ${{ matrix.TEST_NAME }} ${{ matrix.AWS_CLI_VERSION }}
     steps:
       - name: Test ${{ matrix.TEST_NAME }}
@@ -36,6 +48,8 @@ jobs:
         uses: unfor19/install-aws-cli-action@master
         with:
           version: ${{ matrix.AWS_CLI_VERSION }}
+          rootdir: ${{ matrix.ROOTDIR }}
+          workdir: ${{ matrix.WORKDIR }}
       - run: aws --version
         shell: bash
     outputs:
