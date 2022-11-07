@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Test ${{ matrix.TEST_NAME }}
         id: install-aws-cli
-        uses: unfor19/install-aws-cli-action@master
+        uses: unfor19/install-aws-cli-action@v1
         with:
           version: ${{ matrix.AWS_CLI_VERSION }}
           rootdir: ${{ matrix.ROOTDIR }}
