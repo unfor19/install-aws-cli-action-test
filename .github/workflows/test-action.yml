@@ -40,7 +40,13 @@ jobs:
             AWS_CLI_VERSION: "1"
           - TEST_NAME: "ROOTDIR v2"
             ROOTDIR: "/tmp"
-            AWS_CLI_VERSION: "2"            
+            AWS_CLI_VERSION: "2"
+          - TEST_NAME: "BINDIR v2"
+            AWS_CLI_VERSION: "2"
+            BINDIR: "/tmp/aws/bin"
+          - TEST_NAME: "INSTALLROOTDIR v2"
+            AWS_CLI_VERSION: "2"
+            INSTALLROOTDIR: "/tmp/aws"            
     name: Test ${{ matrix.TEST_NAME }} ${{ matrix.AWS_CLI_VERSION }}
     steps:
       - name: Test ${{ matrix.TEST_NAME }}
